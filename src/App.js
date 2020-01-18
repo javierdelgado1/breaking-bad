@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from '@emotion/styled';
 import Frase from './Components/Frase';
 const Contenedor = styled.div`
@@ -35,6 +35,10 @@ function App() {
     console.log(frase[0]);
     guardarFrase(frase[0]);
   }
+
+  useEffect ( () =>{
+    consultarApi();
+  }, []);
   return (
     <Contenedor>
       <Frase
